@@ -12,7 +12,7 @@ import java.util.Set;
 public class CollectionInterfaceExample {
 	public static void main(String[] args) {
 
-		// ==========COLLECTION INTERFACE==========================
+		// ===================COLLECTION INTERFACE==========================
 		// Declaration
 		// public interface Collection<E> extends Iterable<E>
 
@@ -96,7 +96,7 @@ public class CollectionInterfaceExample {
 
 		System.out.println();
 
-		// =================LIST INTERFACE=================================
+		// ==========================LIST INTERFACE===================================
 		// Java List - Operations
 		// 1. Adding Elements
 		List<String> a1 = new ArrayList<>();
@@ -177,7 +177,7 @@ public class CollectionInterfaceExample {
 			System.out.print(str + " ");
 		}
 
-		// ===================SET INTERFACE==========================
+		// =======================SET INTERFACE==============================
 		// Performing Various Operations on Set
 		// 1. Adding Elements
 		Set<String> s1 = new HashSet<>();
@@ -220,9 +220,21 @@ public class CollectionInterfaceExample {
 		}
 		System.out.println();
 
-		// ===================QUEUE INTERFACE====================
-
-		// =========================DEQUE INTERFACEE==========================
+		
+		// =============================QUEUE INTERFACE==============================
+		//Operations on Queue Interface using PriorityQueue
+		//1. Adding Elements
+		
+		//2. Removing Elements
+		
+		//3. Accessing Elements
+		
+		//4. Iterating the Queue
+		
+		
+		
+		
+		// ==============================DEQUE INTERFACEE==================================
 
 		// ========================MAP INTERFACE=========================
 
