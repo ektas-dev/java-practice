@@ -126,5 +126,7 @@ public class ListExample {
 		arrayList.removeFirst();
 		arrayList.removeLast();
 		System.out.println(arrayList);
+		
+		
 	}
 }
