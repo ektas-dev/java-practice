@@ -5,6 +5,7 @@ import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamAPI {
@@ -37,5 +38,26 @@ public class StreamAPI {
 		List<String> alist1 = astr1.collect(Collectors.toList());
 		System.out.println(alist1);
 
+		// From a supplier
+		Stream<String> generated = Stream.generate(() -> "+");
+		List<String> strings1 = generated.limit(5L).toList();
+		System.out.println(strings1);
+
+		// Creating a Stream from a UnaryOperator and a Seed
+		Stream<String> string2 = Stream.iterate("+", s -> s + "+");
+		string2.limit(5L).forEach(System.out::println);
+
+		Stream<String> string3 = Stream.iterate("+", s -> s.length() <= 5, s -> s + "+");
+		string3.forEach(System.out::println);
+
+		// Creating a Stream from a Range of Numbers
+		String[] str3 = { "A", "B", "C", "D" };
+		List<String> l1 = IntStream.range(0, 10).mapToObj(index -> str3[index % str3.length])
+				.collect(Collectors.toList());
+		System.out.println(l1);
+
+		// Creating a Stream of Random Numbers
+		Stream<String> s1 = Stream.iterate("1", s-> s.length() <=5,s -> s+"+");
+		s1.forEach(System.out::println);
 	}
 }
