@@ -59,5 +59,6 @@ public class StreamAPI {
 		// Creating a Stream of Random Numbers
 		Stream<String> s1 = Stream.iterate("1", s-> s.length() <=5,s -> s+"+");
 		s1.forEach(System.out::println);
+		
 	}
 }
