@@ -67,6 +67,7 @@ public class StreamAPI {
 		System.out.println(stream.toList());
 		
 		
+		
 	}
 
 }
