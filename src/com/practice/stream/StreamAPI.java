@@ -57,8 +57,16 @@ public class StreamAPI {
 		System.out.println(l1);
 
 		// Creating a Stream of Random Numbers
-		Stream<String> s1 = Stream.iterate("1", s-> s.length() <=5,s -> s+"+");
+		Stream<String> s1 = Stream.iterate("1", s -> s.length() <= 5, s -> s + "+");
 		s1.forEach(System.out::println);
+
+		// Creating Streams from a Regular Expression
+		String str4 = "For there is good news yet to hear and fine things to be seen.";
+		String[] elements = str4.split(str4);
+		Stream<String> stream = Arrays.stream(elements);
+		System.out.println(stream.toList());
+		
 		
 	}
+
 }
