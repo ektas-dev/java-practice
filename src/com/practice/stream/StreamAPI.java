@@ -65,8 +65,6 @@ public class StreamAPI {
 		String[] elements = str4.split(str4);
 		Stream<String> stream = Arrays.stream(elements);
 		System.out.println(stream.toList());
-	
-		
 		
 	}
 
