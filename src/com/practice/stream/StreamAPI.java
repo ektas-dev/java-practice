@@ -72,6 +72,7 @@ public class StreamAPI {
 		Stream<String> stream1 = pattern.splitAsStream(sentence);
 		List<String> words = stream1.toList();
 		System.out.println(words);
+		
 	}
 
 }
