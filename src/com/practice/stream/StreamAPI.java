@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.function.Function;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
@@ -66,6 +67,11 @@ public class StreamAPI {
 		Stream<String> stream = Arrays.stream(elements);
 		System.out.println(stream.toList());
 	
+		String sentence ="For there is good news yet to hear and fine things to be seen. ";
+		Pattern pattern = Pattern.compile(" ");
+		Stream<String> stream1 = pattern.splitAsStream(sentence);
+		List<String> words = stream1.toList();
+		System.out.println(words);
 	}
 
 }
