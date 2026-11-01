@@ -94,7 +94,7 @@ public class StreamFunctionalInterface {
 
 		// More Stream methods
 		List<String> nameList = new ArrayList<>(
-				Arrays.asList("Aman", "Raj", "Rohit", "Riya", "Rahuk", "Ankit", "Rina"));
+				Arrays.asList("Aman", "Raj", "Rohit", "Riya", "Rahul", "Ankit", "Rina"));
 		// Optional<String> first = nameList.stream().findFirst();
 		// Optional<String> first = nameList.stream().filter(name ->
 		// name.startsWith("R")).findFirst();
@@ -109,20 +109,25 @@ public class StreamFunctionalInterface {
 		// sorted method - intermediary
 		List<Integer> num = new ArrayList<>(Arrays.asList(21, 12, 33, 4, 67, 81, 3));
 		num.stream().sorted().forEach(n -> System.out.println(n));
-		
+
 		// Primitive Stream
 		IntStream intStream = IntStream.range(1, 6);
 //		OptionalDouble average = intStream.average();
 //		System.out.println(average.getAsDouble());
-		
+
 		int sum = intStream.sum();
 		System.out.println(sum);
-		
-		DoubleStream doubleStream = DoubleStream.of(1.5,4.1,2.4,6.4,7.8);
+
+		DoubleStream doubleStream = DoubleStream.of(1.5, 4.1, 2.4, 6.4, 7.8);
 		System.out.println(doubleStream.average().getAsDouble());
-		
-		LongStream longStream = LongStream.of(1,2,3);
+
+		LongStream longStream = LongStream.of(1, 2, 3);
 		System.out.println(longStream.count());
+
+		// Parallel stream
+		List<String> nameList2 = new ArrayList<>(
+				Arrays.asList("Aman", "Raj", "Rohit", "Riya", "Rahul", "Ankit", "Rina"));
+		nameList2.parallelStream().filter(nam -> nam.startsWith("R")).forEach(nam -> System.out.println(nam));
 	}
 }
 
