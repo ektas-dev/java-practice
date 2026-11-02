@@ -3,9 +3,11 @@ package com.practice.stream;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 public class StreamInterview {
@@ -124,9 +126,34 @@ public class StreamInterview {
 		Map<String, Optional<Employee2>> result15 = employee2.stream().collect(Collectors.groupingBy(
 				emp -> emp.getDepartment(), Collectors.maxBy(Comparator.comparingInt(emp -> emp.getSalary()))));
 		System.out.println(result15);
-		
+
 		// convert list into comma separated string
-		
+		String result16 = employee2.stream().map(emp -> emp.getName()).collect(Collectors.joining(","));
+		System.out.println(result16);
+
+		// find common elements between two list
+		List<Integer> list10 = Arrays.asList(1, 2, 3, 4);
+		List<Integer> list11 = Arrays.asList(3, 4, 5, 6);
+		List<Integer> result17 = list11.stream().filter(elem -> list10.contains(elem)).collect(Collectors.toList());
+		System.out.println(result17);
+
+		Set<Integer> set = new HashSet<>(list10);
+		List<Integer> result18 = list11.stream().filter(elem -> set.contains(elem)).collect(Collectors.toList());
+		System.out.println(result18);
+
+		// convert list of list into single list with all elements, remove duplicate
+		List<List<Integer>> list12 = Arrays.asList(Arrays.asList(1, 2, 3, 4), Arrays.asList(3, 4, 5, 6),
+				Arrays.asList(7, 8, 1, 2), Arrays.asList(9, 10, 5, 6), Arrays.asList(11, 12, 7, 8));
+		List<Integer> result19 = list12.stream().flatMap(innerList -> innerList.stream()).distinct()
+				.collect(Collectors.toList());
+		System.out.println(result19);
+
+		// print all employee , operation should be very fast
+		employee2.parallelStream().map(emp -> emp.getName()).forEach(name -> System.out.println(name));
+
+		// compute total combined salary of all employees, operation fast
+		Integer result20 = employee2.parallelStream().map(emp -> emp.getSalary()).reduce(0, (a, b) -> a + b);
+		System.out.println(result20);
 	}
 
 }
