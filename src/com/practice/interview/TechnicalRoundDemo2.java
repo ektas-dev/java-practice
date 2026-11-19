@@ -42,6 +42,12 @@ public class TechnicalRoundDemo2 {
 			temp = temp / 10;
 		}
 		System.out.println("Digit " + d + " occurs " + count + " times.");
+		
+		//Reverse array using recursion
+		
+		//check if the string is anagram
+		
+		
 		sc.close();
 	}
 }
